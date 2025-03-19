@@ -8,15 +8,21 @@
 		"args": [
 		  "-std=c++17",
 		  "-Wall",
-		  "main.cpp",  // ← 실행할 파일을 명확히 지정!
+		  "${workspaceFolder}/main.cpp",  
 		  "-o",
-		  "basic"
+		  "${workspaceFolder}/basic"
 		],
 		"group": {
 		  "kind": "build",
 		  "isDefault": true
 		},
 		"problemMatcher": ["$gcc"],
+		"options": {
+		  "env": {
+			"CXX": "clang++",
+			"CXXFLAGS": "-std=c++17 -Wall"
+		  }
+		},
 		"detail": "Mac용 C++ 빌드 작업"
 	  }
 	]
