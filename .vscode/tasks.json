@@ -8,7 +8,7 @@
 		"args": [
 		  "-std=c++17",
 		  "-Wall",
-		  "${workspaceFolder}/main.cpp",  
+		  "${workspaceFolder}",  
 		  "-o",
 		  "${workspaceFolder}/basic"
 		],
