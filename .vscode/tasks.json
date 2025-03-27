@@ -2,13 +2,13 @@
 	"version": "2.0.0",
 	"tasks": [
 	  {
-		"label": "C++ Build and Run",
+		"label": "Build and Run C++",
 		"type": "shell",
 		"command": "clang++",
 		"args": [
 		  "-std=c++17",
 		  "-Wall",
-		  "${workspaceFolder}/main.cpp",  
+		  "${workspaceFolder}/${fileBasenameNoExtension}.cpp",  
 		  "-o",
 		  "${workspaceFolder}/basic"
 		],
@@ -17,13 +17,15 @@
 		  "isDefault": true
 		},
 		"problemMatcher": ["$gcc"],
-		"options": {
-		  "env": {
-			"CXX": "clang++",
-			"CXXFLAGS": "-std=c++17 -Wall"
-		  }
-		},
-		"detail": "Mac용 C++ 빌드 작업"
+		"detail": "현재 폴더의 모든 .cpp 파일을 빌드",
+		"dependsOn": ["Run C++"]
+	  },
+	  {
+		"label": "Run C++",
+		"type": "shell",
+		"command": "${fileDirname}/${fileBasenameNoExtension}",
+		"problemMatcher": [],
+		"detail": "빌드 후 실행"
 	  }
 	]
   }
